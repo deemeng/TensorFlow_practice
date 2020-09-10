@@ -1,0 +1,41 @@
+Jupyter on Server
+
+[Reference]
+
+1. https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#:~:text=Starting%20at%20notebook%20version%205.0,json%20.
+
+2. https://ljvmiranda921.github.io/notebook/2018/01/31/running-a-jupyter-notebook/
+
+[SERVER]
+
+remoteuser@remotehost
+
+1. jupyter_notebook_config.py 
+[check if it exist]
+/home/USERNAME/.jupyter/jupyter_notebook_config.py
+(/home/student/.jupyter/jupyter_notebook_config.py)
+jupyter notebook --generate-config
+
+2. Automatic Password setup
+jupyter notebook password
+
+3. Run Jupyter without browser on server
+[jupyter notebook --no-browser --port=XXXX]
+jupyter notebook --no-browser --port=8890
+
+[LOCAL]
+
+localuser@localhost
+
+1. Forward via ssh in local machine
+[ssh -N -f -L localhost:YYYY:localhost:XXXX remoteuser@remotehost]
+ssh -N -f -L localhost:8888:localhost:8890 student@ipa-016.ucd.ie
+
+2. Open browser
+
+http://localhost:YYYY
+
+3. Enter the password to access
+
+
+
